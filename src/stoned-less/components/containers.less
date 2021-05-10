@@ -1,0 +1,36 @@
+// default sidebar and topbar sizes - feel free to customize this
+@sidebar-width: 256px;
+@topbar-height: 72px;
+
+// mixins to quickly create container elements
+#container() {
+
+    // horizontal and vertical flexboxes
+    .h-flex(@align-items: center; @justify-content: start) {
+        display: flex;
+        align-items: @align-items;
+        justify-content: @justify-content;
+    }
+    .v-flex(@align-items: center; @justify-content: start) {
+        display: flex;
+        flex-direction: column;
+        align-items: @align-items;
+        justify-content: @justify-content;
+    }
+
+    // simple expanding grid
+    .grid(@numcols: 2; @rowheight: 300px; @rowgap: 0px; @colgap: 0px) {
+        display: grid;
+        grid: auto-flow @rowheight / repeat(@numcols, 1fr);
+    }
+
+    // sidebar and topbar containers
+    .sidebar(@width: @sidebar-width) {
+        display: grid;
+        grid: 100% / @sidebar-width calc(100% - @sidebar-width);
+    }
+    .topbar(@height: @topbar-height) {
+        display: grid;
+        grid: @topbar-height calc(100% - @topbar-height) / 1fr;
+    }
+}

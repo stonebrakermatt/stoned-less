@@ -1,0 +1,39 @@
+// color palette - feel free to customize this
+@colors: {
+
+    // grayscale
+    black: #0B090B;
+    dark-gray: #433743;
+    light-gray: #BFB0BF;
+    white: #FAFFFD;
+
+    // bright rgbcmy colors
+    light-red: #DF3F2A; 
+    light-green: #52D729;
+    light-blue: #2F7FFF;
+    light-cyan: #1FF4DC;
+    light-magenta: #FD21F5;
+    light-yellow: #EDEF15;
+
+    // dark rbgcmy colors
+    dark-red: #A02818; 
+    dark-green: #2D7916;
+    dark-blue: #0046B8;
+    dark-cyan: #079D8B;
+    dark-magenta: #A2029C;
+    dark-yellow: #96990B;
+}
+
+// mixin to quickly set colors
+#color() {
+    .all(@fg-color: @colors[black]; @bg-color: @colors[white]) {
+        background-color: @bg-color;
+        color: @fg-color;
+    }
+    .bg(@color: @colors[white]) {
+        background-color: @color;
+    }
+    .fg(@color: @colors[black]) {
+        color: @color;
+    }
+}

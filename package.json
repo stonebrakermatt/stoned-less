@@ -1,0 +1,34 @@
+{
+  "author": "Matt",
+  "license": "MIT",
+
+  "name": "stoned-less",
+  "description": "Write CSS less and get stoned more.",
+  "version": "1.0.0",
+
+  "main": "src/stoned-less.less",
+  "scripts": {
+    "build": "node node_modules/less/bin/lessc src/test.less test/style.css"
+  },
+  
+  "bugs": {
+    "url": "https://github.com/stonebrakermatt/stoned-less/issues"
+  },
+  "homepage": "https://github.com/stonebrakermatt/stoned-less#readme",
+  "keywords": [
+    "matt",
+    "stonebraker",
+    "stoned",
+    "less",
+    "stoned-less",
+    "css"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stonebrakermatt/stoned-less.git"
+  },
+  
+  "devDependencies": {
+    "less": "^4.1.1"
+  }
+}

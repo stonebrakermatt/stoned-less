@@ -1,0 +1,53 @@
+// padding sizes - feel free to customize this
+@padding-sizes: {
+    sm: 12px;
+    md: 24px;
+    lg: 48px;
+}
+
+// mixin to quickly set paddings
+#padding {
+    .u(@size: @padding-sizes[md]) {
+        padding-top: @size;
+    }
+    .d(@size: @padding-sizes[md]) {
+        padding-bottom: @size;
+    }
+    .l(@size: @padding-sizes[md]) {
+        padding-left: @size;
+    }
+    .r(@size: @padding-sizes[md]) {
+        padding-right: @size;
+    }
+    .ud(@size: @padding-sizes[md]) {
+        padding-top: @size;
+        padding-bottom: @size;
+    }
+    .lr(@size: @padding-sizes[md]) {
+        padding-left: @size;
+        padding-right: @size;
+    }
+    .u-0(@size: @padding-sizes[md]) {
+        padding-left: @size;
+        padding-right: @size;
+        padding-bottom: @size;
+    }
+    .d-0(@size: @padding-sizes[md]) {
+        padding-top: @size;
+        padding-left: @size;
+        padding-right: @size;
+    }
+    .l-0(@size: @padding-sizes[md]) {
+        padding-top: @size;
+        padding-right: @size;
+        padding-bottom: @size;
+    }
+    .r-0(@size: @padding-sizes[md]) {
+        padding-top: @size;
+        padding-left: @size;
+        padding-bottom: @size;
+    }
+    .udlr(@size: @padding-sizes[md]) {
+        padding: @size;
+    }
+}
