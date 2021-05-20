@@ -40,12 +40,12 @@
     // sidebar and topbar containers
     .sidebar(@width: @sidebar-width) {
         display: grid;
-        grid: 100% / @sidebar-width calc(100% - @sidebar-width);
+        grid: 100% / @width calc(100% - @width);
         #size.all(100%, 100%);
     }
     .topbar(@height: @topbar-height) {
         display: grid;
-        grid: @topbar-height calc(100% - @topbar-height) / 1fr;
+        grid: @height calc(100% - @height) / 1fr;
         #size.all(100%, 100%);
     }
 }

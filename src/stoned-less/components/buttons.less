@@ -1,0 +1,36 @@
+// button heights - feel free to customize this
+@button-heights: {
+    small: 24px;
+    medium: 36px;
+    large: 48px;
+}
+
+// button widths - feel free to customize this
+@button-widths: {
+    small: 96px;
+    medium: 144px;
+    large: 192px;
+}
+
+// mixins to quickly create buttons
+#button() {
+    .h-nav(@space: 24px; @fg1: @colors[dark-blue]; @fg2: @colors[light-blue]) {
+        #color.fg(@fg1);
+        &:hover {
+            #color.fg(@fg2);
+        }
+        margin: 0px @space;
+        transition: color;
+    }
+    .v-nav(@height: @button-heights[medium]; @bg1: fade(@colors[black], 0%); @bg2: fade(@colors[black], 25%); @border: @colors[black]) {
+        #border.bottom(@border-sizes[thin]; solid; @border);
+        #color.bg(@bg1);
+        &:hover {
+            #color.bg(@bg2);
+        }
+        #font.text(calc(2 * @height / 3); @height);
+        #size.all(@height);
+        text-align: center;
+        transition: background-color;
+    }
+}

@@ -2,7 +2,44 @@
 
 #root {
     #container.topbar(64px);
-}
-#app {
-    #container.sidebar(192px);
+    #titlebar {
+        #border.bottom(@border-sizes[thick]);
+        #color.bg(@colors[light-gray]);
+        #container.sidebar(64px);
+        #logo-container {
+            #container.center();
+        }
+        #title-container > #title {
+            #font.heading(24px; 59px);
+        }
+    }
+    #app {
+        #container.topbar(24px);
+        #sidebar {
+            #border.bottom(@border-sizes[normal]);
+            #container.h-flex(center; center);
+            .nav-link {
+                #button.h-nav();
+            }
+        }
+    }
+    @media @widths[600] {
+        #container.topbar(72px);
+        #titlebar {
+            #container.sidebar(128px);
+            #title-container > #title {
+                #font.heading(32px; 67px);
+            }
+        }
+        #app {
+            #container.sidebar(192px);
+            #sidebar {
+                #border.right(@border-sizes[normal]);
+                #container.v-flex();
+                .nav-link {
+                    #button.v-nav();
+                }
+            }
+        }
+    }
 }

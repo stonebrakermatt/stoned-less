@@ -13,6 +13,7 @@ html {
 // remove text decoration on links
 a, a:active, a:visited {
     text-decoration: none;
+    color: @colors[dark-blue];
 }
 
 // use display block for img and iframe
@@ -20,9 +21,20 @@ img, iframe {
     display: block;
 }
 
-// set html and body height and width and hide overflow
+// set html and body font, height, and width and hide overflow
 html, body {
+    #font.text();
     height: 100vh;
     width: 100vw;
     overflow: hidden;
+}
+
+// set heading font
+h1, h2, h3, h4, h5, h6 {
+    #font.heading();
+}
+
+// set mono font
+code, pre {
+    #font.mono();
 }
