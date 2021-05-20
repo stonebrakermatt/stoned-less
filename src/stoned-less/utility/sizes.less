@@ -1,0 +1,65 @@
+// card heights - feel free to customize this
+@card-heights: {
+    small: 200px;
+    medium: 400px;
+    large: 600px;
+}
+
+// card widths - feel free to customize this
+@card-widths: {
+    small: 300px;
+    medium: 600px;
+    large: 900px;
+}
+
+// mixins to quickly set sizes
+#size() {
+
+    // size generic elements
+    .all(@height: 100%; @width: 100%) {
+        height: @height;
+        width: @width;
+    }
+    .h(@height: 100%) {
+        height: @height;
+    }
+    .w(@width: 100%) {
+        width: @width;
+    }
+
+    // size a card-like element
+    .card(@height: @card-heights[medium]; @width: @card-widths[medium]) {
+        height: @height;
+        width: @width;
+    }
+
+    // equally size height and width
+    .equal(@size: 100px) {
+        height: @size;
+        width: @size;
+    }
+
+    // set maximum sizes
+    .max-all(@height: 100%; @width: 100%) {
+        max-height: @height;
+        max-width: @width;
+    }
+    .max-h(@height: 100%) {
+        max-height: @height;
+    }
+    .max-w(@width: 100%) {
+        max-width: @width;
+    }
+
+    // set minimum sizes
+    .min-all(@height: 100%; @width: 100%) {
+        min-height: @height;
+        min-width: @width;
+    }
+    .min-h(@height: 100%) {
+        min-height: @height;
+    }
+    .min-w(@width: 100%) {
+        min-width: @width;
+    }
+}

@@ -1,0 +1,37 @@
+// add font-face at-rules here for custom fonts
+
+// fonts - feel free to customize this
+@fonts: {
+    default: 'Verdana';
+    heading: 'Arial Black';
+    mono: 'Courier';
+}
+
+// font sizes - feel free to customize this
+@font-sizes: {
+
+    // font sizes for text
+    text-tiny: 10px;
+    text-small: 12px;
+    text-normal: 14px;
+    text-large: 16px;
+    text-huge: 18px;
+
+    // font sizes for headings
+    heading-small: 24px;
+    heading-normal: 36px;
+    heading-large: 48px;
+}
+
+// mixins for quickly setting fonts
+#font() {
+    .heading(@size: @font-sizes[heading-normal]; @line-height: @font-sizes[heading-normal]) {
+        font: @size/@line-height @fonts[heading];
+    }
+    .mono(@size: @font-sizes[text-normal]; @line-height: 1.5em) {
+        font: @size/@line-height @fonts[mono];
+    }
+    .text(@size: @font-sizes[text-normal]; @line-height: 1.5em) {
+        font: @size/@line-height @fonts[default];
+    }
+}

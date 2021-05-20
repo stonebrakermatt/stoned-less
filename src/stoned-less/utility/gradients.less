@@ -1,0 +1,19 @@
+// mixins to quickly create gradient backgrounds
+#gradient() {
+
+    // general linear and radial gradients with two color stops
+    .linear(@angle: 0deg; @color1: @colors[black]; @color2: @colors[white]) {
+        background-image: linear-gradient(@angle, @color1, @color2);
+    }
+    .radial(@shape: ellipse; @color1: @colors[black]; @color2: @colors[white]) {
+        background-image: radial-gradient(@shape, @color1, @color2);
+    }
+
+    // more complicated gradients for special cases
+    .rainbow(@angle: 90deg) {
+        background-image: linear-gradient(@angle, red, orange, yellow, green, blue, indigo, violet);
+    }
+    .vignette(@color: @colors[black]) {
+        background-image: radial-gradient(ellipse, transparent 0%, transparent 75%, fade(@colors[black], 50%) 100%);
+    }
+}

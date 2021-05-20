@@ -1,65 +1,47 @@
-// border widths - feel free to customize this
-@border-widths: {
+// border radii - feel free to customize this
+@border-radii: {
+    none: 0px;
+    tight: 5px;
+    wide: 10px;
+}
+
+// border sizes - feel free to customize this
+@border-sizes: {
     thin: 1px;
     normal: 3px;
     thick: 5px;
 }
 
-// border radii - feel free to customize this
-@border-radii: {
-    none: 0px;
-    tight: 5px;
-    loose: 10px;
-}
-
-// mixin to quickly set borders
+// mixins to quickly set borders
 #border() {
-    .u(@width: @border-widths[normal]; @color: @colors[black]) {
-        border-top: @width solid @color;
-    }
-    .d(@width: @border-widths[normal]; @color: @colors[black]) {
-        border-bottom: @width solid @color;
-    }
-    .l(@width: @border-widths[normal]; @color: @colors[black]) {
-        border-left: @width solid @color;
-    }
-    .r(@width: @border-widths[normal]; @color: @colors[black]) {
-        border-right: @width solid @color;
-    }
-    .ud(@width: @border-widths[normal]; @color: @colors[black]) {
-        border-top: @width solid @color;
-        border-bottom: @width solid @color;
-    }
-    .lr(@width: @border-widths[normal]; @color: @colors[black]) {
-        border-left: @width solid @color;
-        border-right: @width solid @color;
-    }
-    .u-0(@width: @border-widths[normal]; @color: @colors[black]; @radius: @border-radii[none]) {
-        border-left: @width solid @color;
-        border-right: @width solid @color;
-        border-bottom: @width solid @color;
+
+    // set all borders with an optional radius
+    .all(@size: @border-sizes[normal]; @style: solid; @color: @colors[black]; @radius: @border-radii[none]) {
+        border: @size @style @color;
         border-radius: @radius;
     }
-    .d-0(@width: @border-widths[normal]; @color: @colors[black]; @radius: @border-radii[none]) {
-        border-top: @width solid @color;
-        border-left: @width solid @color;
-        border-right: @width solid @color;
-        border-radius: @radius;
+
+    // set directional borders
+    .top(@size: @border-sizes[normal]; @style: solid; @color: @colors[black]) {
+        border-top: @size @style @color;
     }
-    .l-0(@width: @border-widths[normal]; @color: @colors[black]; @radius: @border-radii[none]) {
-        border-top: @width solid @color;
-        border-right: @width solid @color;
-        border-bottom: @width solid @color;
-        border-radius: @radius;
+    .bottom(@size: @border-sizes[normal]; @style: solid; @color: @colors[black]) {
+        border-bottom: @size @style @color;
     }
-    .r-0(@width: @border-widths[normal]; @color: @colors[black]; @radius: @border-radii[none]) {
-        border-top: @width solid @color;
-        border-left: @width solid @color;
-        border-bottom: @width solid @color;
-        border-radius: @radius;
+    .left(@size: @border-sizes[normal]; @style: solid; @color: @colors[black]) {
+        border-left: @size @style @color;
     }
-    .udlr(@width: @border-widths[normal]; @color: @colors[black]; @radius: @border-radii[none]) {
-        border: @width solid @color;
-        border-radius: @radius;
+    .right(@size: @border-sizes[normal]; @style: solid; @color: @colors[black]) {
+        border-right: @size @style @color;
+    }
+
+    // set pairs of opposite borders
+    .h(@size: @border-sizes[normal]; @style: solid; @color: @colors[black]) {
+        border-top: @size @style @color;
+        border-bottom: @size @style @color;
+    }
+    .v(@size: @border-sizes[normal]; @style: solid; @color: @colors[black]) {
+        border-left: @size @style @color;
+        border-right: @size @style @color;
     }
 }

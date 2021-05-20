@@ -1,0 +1,30 @@
+// shape sizes - feel free to customize this
+@shape-sizes: {
+    small: 12px;
+    medium: 18px;
+    large: 24px;
+}
+
+// mixins to quickly
+#shape() {
+    .arrow-top(@size: @shape-sizes[medium]; @color: @colors[black]) {
+        #border.v(calc(@size / 2); solid; transparent);
+        #border.bottom(@size; solid; @color);
+        #size.equal(0px);
+    }
+    .arrow-bottom(@size: @shape-sizes[medium]; @color: @colors[black]) {
+        #border.v(calc(@size / 2); solid; transparent);
+        #border.top(@size; solid; @color);
+        #size.equal(0px);
+    }
+    .arrow-left(@size: @shape-sizes[medium]; @color: @colors[black]) {
+        #border.h(calc(@size / 2); solid; transparent);
+        #border.right(@size; solid; @color);
+        #size.equal(0px);
+    }
+    .arrow-right(@size: @shape-sizes[medium]; @color: @colors[black]) {
+        #border.h(calc(@size / 2); solid; transparent);
+        #border.left(@size; solid; @color);
+        #size.equal(0px);
+    }
+}

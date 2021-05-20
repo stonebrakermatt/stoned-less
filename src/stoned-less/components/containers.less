@@ -5,6 +5,13 @@
 // mixins to quickly create container elements
 #container() {
 
+    // centering container
+    .center() {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
     // horizontal and vertical flexboxes
     .h-flex(@align-items: center; @justify-content: start) {
         display: flex;
@@ -18,19 +25,27 @@
         justify-content: @justify-content;
     }
 
-    // simple expanding grid
-    .grid(@numcols: 2; @rowheight: 300px; @rowgap: 0px; @colgap: 0px) {
+    // simple grids
+    .expanding-grid(@num-cols: 2; @row-height: 300px; @row-gap: 0px; @col-gap: 0px) {
         display: grid;
-        grid: auto-flow @rowheight / repeat(@numcols, 1fr);
+        grid: auto-flow @row-height / repeat(@num-cols, 1fr);
+        gap: @row-gap @col-gap;
+    }
+    .grid(@num-rows: 3; @num-cols: 3; @row-gap: 0px; @col-gap: 0px) {
+        display: grid;
+        grid: repeat(@num-rows, 1fr) / repeat(@num-cols, 1fr);
+        gap: @row-gap @col-gap;
     }
 
     // sidebar and topbar containers
     .sidebar(@width: @sidebar-width) {
         display: grid;
         grid: 100% / @sidebar-width calc(100% - @sidebar-width);
+        #size.all(100%, 100%);
     }
     .topbar(@height: @topbar-height) {
         display: grid;
         grid: @topbar-height calc(100% - @topbar-height) / 1fr;
+        #size.all(100%, 100%);
     }
 }
